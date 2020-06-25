@@ -17,9 +17,9 @@ def build_reflection_matrix(bearBasis) : # The parameter bearBasis is a 2×2 mat
     # Write a matrix in component form that performs the mirror's reflection in the mirror's basis.
     # Recall, the mirror operates by negating the last component of a vector.
     # Replace a,b,c,d with appropriate values
-    TE = np.array([[1, -1],
-                   [1.5, 2]])
+    TE = np.array([[1, 0],
+                   [0, -1]])
     # Combine the matrices E and TE to produce your transformation matrix.
-    T = E@TE
+    T = E @ TE @ transpose(E)
     # Finally, we return the result. There is no need to change this line.
     return T
